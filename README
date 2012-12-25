@@ -1,0 +1,10 @@
+Simple Forum software on top of Dancer.
+
+requires: 
+Dancer
+DBD::Pg				  
+HTML::BBCode		  - bbcode
+Gravatar::URL         - gravatars
+Net::OpenID::Consumer - openid
+	Math::BigInt::GMP
+	Math::BigInt::Pari
