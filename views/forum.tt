@@ -1,0 +1,23 @@
+[% USE date(format = '%D %H:%M:%S') %]
+<table class="topics">
+    <tr class="yellow">
+		<td>Topic</td>	
+		<td>Last comment</td>
+	</tr>
+    [% FOREACH tr = topics %]
+		<tr>
+            <td>
+				<a href="[% site_prefix %]/topic/[% tr.id %] ">[% tr.subject %]</a><br/>
+				<span style="font-size: small">Topics: [% tr.posts_count %] | Replies: [% tr.comments_count %] </span>
+			</td>
+            <td>
+               [% IF tr.last_reply.create_time %]
+                    <a href="[% site_prefix %]/topic/[% tr.id %]/post/[% tr.last_reply.post_id %]#comment[% tr.last_reply.id %]">[% date.format(tr.last_reply.create_time) %]</a>
+         
+               [% ELSE %]
+                    ---
+               [% END %]
+            </td>
+        </tr>
+    [% END %]
+</table>

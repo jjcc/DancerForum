@@ -1,0 +1,8 @@
+<form action="[% site_prefix %]/topic/[% topic.id %]/post/[% post.id %]/reply" method="post" accept-charset="utf-8">
+<table>
+    <tr><th>Text</th></tr>
+    <tr><td>[% INSERT bbcode_text.tt %]</td></tr>
+</table>
+<p><input type="submit" value="Continue"/></p>
+</form>
+[% INSERT bbcode_javascript.tt %]

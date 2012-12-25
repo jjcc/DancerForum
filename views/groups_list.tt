@@ -1,0 +1,19 @@
+<table class="list">
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+[% FOREACH group = rows  %]
+<tr class="[% IF loop.index % 2 %]even[% ELSE %]odd[% END %]">
+<td>[% group.id %]</td>
+<td>[% group.name %]</td>
+</tr>
+</tbody>
+[% END %]
+<tfoot>
+<tr><th colspan="2"><a href="[% add_link %]">add</a></th></tr>
+</tfoot>
+</table>

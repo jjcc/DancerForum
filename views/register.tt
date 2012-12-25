@@ -1,0 +1,19 @@
+[% IF error_msg %]
+<div class="error">[% error_msg %]</div>
+[% END %]
+<form  method="POST" action="[% site_prefix %]/register">
+	<fieldset>
+	<legend>Registration</legend>
+	<label>Username:</label>
+	<input type="text" name="username" value="[% typed_username %]" /><br/>
+	<label for="email" class="required" accesskey="e">Email: </label>
+	<input type="text" name="email" value="[% typed_email %]"/> <br/>
+	<label>Website:</label>
+	<input type="text" name="email" value="[% typed_website %]" /><br/>
+	<label>Password:</label>
+	<input type="password" name="password"><br/>
+	<label>Confirm password:</label>
+	<input type="password" name="conf_password"/><br/>
+    <input type="submit" name="submit_register">
+	</fieldset>
+</form>

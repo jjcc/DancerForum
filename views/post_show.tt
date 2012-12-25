@@ -1,0 +1,53 @@
+[% USE date(format = '%D %H:%M:%S') %]
+
+<a href="[% site_prefix %]/topics">Main Forum</a> &gt; <a href="[% site_prefix %]/topic/[% parent_topic.id %]">[% parent_topic.subject %] </a>
+<hr>
+
+<div class=reply>
+<table class="replies">
+    <tr>
+        <th>&nbsp;</th>
+        <th>
+            <div style="background-color: #EEE; height: 3.5em; font-weight: bold; ">
+                <div style="text-align:left; ">[% post.subject %]</div>
+                <div style="text-align:left; font-style: italic;">[% date.format(post.create_time) %]</div>
+            </div>
+        </th>
+    </tr>
+
+    <tr>
+        <td class="user-info">
+                <img src="[% post.avatar %]"><p/>
+            <a href="[% site_prefix %]/user/[% post.user_id %]">[% post.username %]</a> </td>
+        <td style="text-align: left; vertical-align:top; margin-top: 20px; margin-bottom: 20px; padding-top: 20px; padding-bottom: 20px;"><div class="post-text">[% post.text %] </div></td>
+    </tr>
+</table>
+</div>
+
+
+[% IF no_comments %]
+    No comments! &nbsp; <a href="[% site_prefix %]/topic/[% parent_topic.id %]/post/[% post.id %]/reply">New Reply</a>
+[% ELSE %]
+    <div style="align-text: right"> 
+        <a href="[% site_prefix %]/topic/[% parent_topic.id %]/post/[% post.id %]/reply">New Reply</a><br/>
+    </div>
+
+    <div class=reply>
+    <table class="replies">
+    [% FOREACH comment = comments %]
+        <tr class="reply">
+            <td class="user-info">
+                    <img src="[% comment.avatar %]"><p/>
+                    <a href="[% site_prefix %]/user/[% comment.user_id %]">[% comment.username %]</a>
+            </td>
+            <td style="text-align: left; vertical-align:top; margin-top: 20px; margin-bottom: 20px; padding-top: 20px; padding-bottom: 20px;">
+                <a id="comment[% comment.id %]"></a>
+                <div style="background-color: #EEE; height: 3.5em; font-weight: bold; ">[% date.format(comment.create_time) %] </div><br/>
+                <div class="post-text">[% comment.text %]</div>
+            </td>
+        </tr>
+    [% END %]
+    </table>
+    </div>
+[% END %]
+

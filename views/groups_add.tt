@@ -1,0 +1,22 @@
+<form method="POST" action="/admin/<% table %>/add">
+<table class="edit">
+<thead>
+<tr>
+<th>name</th>
+<th>value</th>
+</tr>
+</thead
+>
+<tbody>
+<% FOREACH field = fields  %>
+<tr class="<% IF loop.index % 2 %>even<% ELSE %>odd<% END %>">
+<td><% field %></td>
+<td><input type="text" name="<% table _ ':' _ field %>"></td>
+</tr>
+</tbody>
+<% END %>
+<tfoot>
+<tr><th colspan="2"><input type="submit"> </tr>
+</tfoot>
+</table>
+

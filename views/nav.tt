@@ -1,0 +1,18 @@
+<div style="text-align: left; width=50%">
+<a href="[% site_prefix %]/">Home</a>               |
+[% IF session.user_id %]
+
+	<a href="[% site_prefix %]/admin/topic/new">Add  new topic</a>
+[% END %]	
+</div>
+
+<div style="text-align: right; ">
+[% IF session.username %]
+    [% session.username %] | 
+    <a href="[% site_prefix %]/logout">Logout</a>
+[% ELSE %]
+    <a href="[% site_prefix %]/register">Register</a>   |
+    <a href="[% site_prefix %]/login">Login</a> |
+	<a href="[% site_prefix %]/openid"><img src="/images/openid_small.png"> OpenID</a>
+[% END %]
+</div>

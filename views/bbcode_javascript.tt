@@ -1,0 +1,10 @@
+<script language="javascript">
+    $(document).ready(function()    {
+        $('#bbcode').markItUp(myBBCodeSettings);
+
+        $('#emoticons a').click(function() {
+            emoticon = $(this).attr("title");
+            $.markItUp( { replaceWith:emoticon } );
+        });
+    });
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf8" />
+<title>forum</title>
+
+<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet" href="/css/markitup.css" />
+<link rel="stylesheet" href="/css/markdown.css" />
+<link rel="stylesheet" href="/css/bbcode.css" />
+<link rel="stylesheet" href="/css/comments.css" />
+
+<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script>!window.jQuery && document.write('<script src="/javascripts/jquery.js"><\/script>')</script>
+<script type="text/javascript" src="/javascripts/jquery.markitup.js"></script>
+<script type="text/javascript" src="/javascripts/markdown.js"></script>
+<script type="text/javascript" src="/javascripts/bbcode.js"></script>
+
+</head>
+<body>
+<div class=page>
+<h1><a href="[% site_prefix %]">Forum</a></h1>
+<div class=metanav>
+	[% INCLUDE nav.tt %]
+</div>
+[% IF msg %]
+	<div class=flash> [% msg %] </div>
+[% END %]
+[% content %]
+</div>
+</body>
+</html>

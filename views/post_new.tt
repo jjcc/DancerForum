@@ -1,0 +1,10 @@
+<form action="[% site_prefix %]/topic/[% parent_topic %]/post/new" method="post" accept-charset="utf-8">
+<table>
+    <tr><th>Subject</th></tr>
+    <tr><td><input type="text" name="subject" /></td></tr>
+    <tr><th>Text</th></tr>
+    <tr><td>[% INSERT bbcode_text.tt %]</td></tr>
+</table>
+<p><input type="submit" value="Continue"/></p>
+</form>
+[% INSERT bbcode_javascript.tt %]

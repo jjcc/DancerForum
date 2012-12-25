@@ -1,0 +1,25 @@
+<table class="list">
+<thead>
+<tr>
+<th>id</th>
+<th>username</th>
+<th>email</th>
+<th>website</th>
+<th>avatar_file</th>
+</tr>
+</thead>
+<tbody>
+<% FOREACH user = rows  %>
+<tr class="[% IF loop.index % 2 %]even[% ELSE %]odd[% END %]">
+<td><% user.id %></td>
+<td><% user.username %></td>
+<td><% user.email %></td>
+<td><% user.website%></td>
+<td><% user.avatar_file %></td>
+</tr>
+</tbody>
+<tfoot>
+<tr><th colspan="5"></th></tr>
+</tfoot>
+<% END %>
+</table>

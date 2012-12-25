@@ -1,0 +1,9 @@
+<div id="emoticons">
+<a href="#" title=":)"><img src="/images/emoticons/emoticon-happy.png" /></a>
+<a href="#" title=":("><img src="/images/emoticons/emoticon-unhappy.png" /></a>
+<a href="#" title=":o"><img src="/images/emoticons/emoticon-surprised.png" /></a>
+<a href="#" title=":p"><img src="/images/emoticons/emoticon-tongue.png" /></a>
+<a href="#" title=";)"><img src="/images/emoticons/emoticon-wink.png" /></a>
+<a href="#" title=":D"><img src="/images/emoticons/emoticon-smile.png" /></a>
+</div>
+<textarea id="bbcode" name="text" rows="12" cols="100"></textarea>

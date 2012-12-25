@@ -1,0 +1,35 @@
+layout: "main"
+logger: "console"
+#charset: "utf8"
+appname: "running"
+auto_reload: 1
+template: template_toolkit
+engines:
+    template_toolkit:
+        ENCODING: utf8
+        start_tag: '[%'
+        end_tag: '%]'
+session: YAML
+session_dir: /tmp/dancer-sessions
+
+
+plugins:
+  Database:
+    driver: 'mysql'
+    database: 'running'
+    host: 'localhost'
+    port: 3306
+    username: "root"
+    password:
+    connection_check_threshold: 10
+    dbi_params:
+        RaiseError: 1
+        AutoCommit: 1
+  
+  Email:
+    ssl: 1
+    driver: smtp
+    host: mail.tspenov.com
+    port: 465
+    user: ceci@tspenov.com
+    pass: alabala

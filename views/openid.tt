@@ -1,0 +1,9 @@
+<form action="[% site_prefix %]/openid" method="GET">
+<fieldset>
+<legend>OpenID</legend>
+<img src="/images/openid.png">
+<label>Your OpenID:</label>
+<input type="text" name="openid"/><br/> 
+<input type="submit" value="confirm"> 
+</form> 
+</fieldset>

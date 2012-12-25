@@ -1,0 +1,13 @@
+[% IF error_msg %]
+<div class="error">[% error_msg %]</div>
+[% END %]
+<form method="POST" action="[% site_prefix %]/login">
+	 <fieldset>
+	 <legend>Login</legend>
+	 <label>Username:</label>
+	 <input type="text" name="username" value="[% typed_username %]" /><br/>
+	 <label>Password:</label>
+	 <input type="password" name="password" /><br/>
+    <input type="submit" name="submit_login" value="Login">
+	</fieldset>
+</form>

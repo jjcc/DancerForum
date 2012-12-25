@@ -1,0 +1,43 @@
+[% USE date(format = '%D %H:%M:%S') %]
+
+<a href="[% site_prefix %]/topics">Main Forum</a> &gt; <a href="[% site_prefix %]/topic/[% parent_topic.id %]">[% parent_topic.subject %]</a>
+<hr>
+
+[% IF no_posts %]
+    No posts! &nbsp; <a href="[% site_prefix %]/topic/[% parent_topic.id %]/post/new">Add new post</a>
+[% ELSE %]
+    <a href="[% site_prefix %]/topic/[% parent_topic.id %]/post/new">Add new post</a> | Pages: 
+	[% curr_page = 1 %]
+	[% WHILE curr_page <= pages %]
+		<a href="[% site_prefix %]/topic/[% parent_topic.id %]?page=[% curr_page %]">[[% curr_page %]]</a> |
+		[% curr_page = curr_page + 1 %]
+	[% END %]
+    <table class="topics">
+    <tr class="yellow">
+        <td>Topic</td>
+        <td>Author</td>
+        <td>Comments</td>
+        <td>Views</td>
+        <td>Last reply</td>
+    </tr>
+    [% FOREACH post = posts %]
+        <tr>
+            <td><a href="[% site_prefix %]/topic/[% parent_topic.id %]/post/[% post.id %] ">[% post.subject %]</a></td>
+            
+			<td><a href="[% site_prefix %]/user/[% post.user_id %]">[% post.username %]</a></td>
+            <td>[% post.comments %]</td>
+            <td>[% post.views %]</td>
+            <td style="width: 30%;"> [% IF post.last_reply.create_time %]
+                    <a style="font-size: small;" href="[% site_prefix %]/topic/[% post.topic_id %]/post/[% post.id %]#comment[% post.last_reply.id %]">[% date.format(post.last_reply.create_time) %]</a><br/>
+                    From: <a style="font-size: small;" href="[% site_prefix %]/user/[% post.last_reply.user_id %]">[% post.last_reply.username %]</a>
+                    
+               [% ELSE %]
+                       ---
+               [% END %]
+            </td>
+        </tr>
+    [% END %]
+    </table>
+    
+[% END %]
+

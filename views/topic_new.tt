@@ -1,0 +1,8 @@
+<form action="[% site_prefix %]/admin/topic/new" method="POST">
+<fieldset>
+<legend>Add new topic</legend>
+<label>Subject: </label>
+<input type="test" name="subject"/><br/>
+<input type="submit" value="Create"/>
+</fieldset>
+</form>
