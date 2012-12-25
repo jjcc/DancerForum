@@ -1,8 +1,9 @@
 Simple Forum software on top of Dancer.
 
+Modified for MySql
 requires: 
 Dancer
-DBD::Pg				  
+DBD::MySQL
 HTML::BBCode		  - bbcode
 Gravatar::URL         - gravatars
 Net::OpenID::Consumer - openid
